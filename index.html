@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Recetario</title>
 </head>
 <body>
@@ -10,9 +11,10 @@
     <header class="header">
         <nav class="header_nav">
             <div class="header_nav_containerLogo">
-                <img class="logo" src="#" alt="logo">
+                <img class="logo" src="./assets/img/restaurante.png" alt="logo">
                 <p>Mi recetario</p>
             </div>
+            <button class="header_btn"><img src="./assets/img/menu.png" alt=""></button>
             <ul class="header_nav_list">
                 <li>Todas</li>
                 <li>Chile</li>
@@ -26,36 +28,38 @@
         <h1 class="header_title"><span>Mis</span><br>Recetas</h1>
             
         <div class="header_searcher">
-            <img class="header_searcher_icon" src="#" alt="busqueda-icon">
+            <img class="header_searcher_icon" src="./assets/img/buscar.png" alt="busqueda-icon">
             <input type="text" placeholder="Buscar receta">
         </div>
     </header>
 
     <main class="main">
-        <h2 class="form_title">¿Idea de receta nueva?</h2>
-        <form class="form_container" action="#">
-            <label for="nombre">Nombre</label>
-            <input name="nombre" id="nombre" type="text">
+        <div class="form_container_bg">
+            <h2 class="form_title">¿Idea de receta nueva?</h2>
+            <form class="form_container" action="#">
+                <label for="nombre">Nombre</label>
+                <input name="nombre" id="nombre" type="text">
+    
+                <label for="origen">País de origen</label>
+                <input name="origen" id="origen"  type="text">
+    
+                <label for="ingredientes">Ingredientes</label>
+                <textarea name="ingredientes" id="ingredientes"></textarea>
+    
+                <label for="tiempo">¿Tiempo de preparación estimado?</label>
+                <input name="tiempo" id="tiempo" type="time">
+    
+                <label for="categoria">Categoría</label>
+                <input type="text" name="categoria" id="categoria">
+    
+                <Label for="preparación">Instrucciones de preparación</Label>
+                <textarea name="preparación" id="preparación"></textarea>
+    
+                <button class="btn_form" type="submit">Guardar receta</button>
+            </form>
+        </div>
 
-            <label for="origen">País de origen</label>
-            <input  type="text">
-
-            <label for="">Ingredientes</label>
-            <textarea name="" id=""></textarea>
-
-            <label for="">¿Tiempo de preparación estimado?</label>
-            <input type="number">
-
-            <label for="">Categoría</label>
-            <input type="text" name="" id="">
-
-            <Label for="">Instrucciones de preparación</Label>
-            <textarea name="" id=""></textarea>
-
-            <button type="submit">Guardar receta</button>
-        </form>
-
-        <section>
+        <section class="card_container">
 
         </section>
     </main>
