@@ -8,18 +8,18 @@
 body {
   font-family: "Inter", sans-serif;
   width: 450px;
+  position: relative;
 }
 
 .header {
   background-image: url(../assets/img/bg_header.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-position-y: 38px;
+  background-position-y: 36px;
   height: 450px;
 }
 
 .header_nav {
-  border: 1px solid wheat;
   display: flex;
   justify-content: space-around;
   background-color: #dbdbdb;
@@ -34,16 +34,41 @@ body {
 }
 
 .header_nav_containerLogo img {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 
-.header_nav_list {
+.header_nav_list{
   display: none;
 }
 
-.header_btn {
-  border: 2px solid greenyellow;
+.header_nav_list a:hover{
+  cursor: pointer;
+  color: yellowgreen;
+}
+.header_nav_list.active {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top:0;
+  right: 0;
+  bottom: 0;
+  padding: 80px;
+  background-color: black;
+  color: white;
+  list-style: none;
+  gap: 15px;
+  box-shadow: 0 0 0 100vmax rgb(0, 0, 0, 0.5);
+}
+
+
+
+.header_btn.active{
+  position: absolute;
+  right: 100px;
+
+  z-index: 1;
 }
 
 .header_btn img {
@@ -132,4 +157,9 @@ body {
     border: none;
     border-radius: 5px;
     font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn_form:hover{
+    background-color: rgb(178, 240, 54);
 }
