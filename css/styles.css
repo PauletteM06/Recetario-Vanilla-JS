@@ -196,3 +196,20 @@ body {
 .btn_form:hover, .btn_ingrediente:hover{
     background-color: rgb(178, 240, 54);
 }
+
+.card_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  min-height: 300px;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: green; /* para que la card sea visible */
+  padding: 1rem;
+  border: 1px solid orange;
+}
+
+

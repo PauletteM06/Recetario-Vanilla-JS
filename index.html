@@ -28,7 +28,7 @@
             
         <div class="header_searcher">
             <img class="header_searcher_icon" src="./assets/img/buscar.png" alt="busqueda-icon">
-            <input type="text" placeholder="Buscar receta">
+            <input type="text" id="id_buscarReceta" placeholder="Buscar receta">
         </div>
     </header>
 
@@ -36,15 +36,15 @@
         <div class="form_container_bg">
             <h2 class="form_title">¿Idea de receta nueva?</h2>
             <form class="form_container" action="#">
-                <label for="titulo">Titulo</label>
-                <input name="titulo" id="titulo" type="text">
+                <label for="id_titulo">Titulo</label>
+                <input name="titulo" id="id_titulo" type="text">
     
-                <label for="origen">País de origen</label>
-                <input name="origen" id="origen"  type="text">
+                <label for="id_origen">País de origen</label>
+                <input name="origen" id="id_origen"  type="text">
     
-                <label for="ingredientes">Ingredientes</label>
+                <label for="id_ingredientes">Ingredientes</label>
                 <div class="ingredientes_container_input">
-                    <input type="text" id="ingredientes" name="ingredientes">
+                    <input type="text" id="id_ingredientes" name="ingredientes">
                     <button type="button" class="btn_ingrediente">Añadir +</button>
                 </div>
                 <div class="ingredientes_container_list">
@@ -53,14 +53,14 @@
                     </ul>
                 </div>
     
-                <label for="tiempo">¿Tiempo de preparación estimado?</label>
-                <input name="tiempo" id="tiempo" type="time">
+                <label for="id_tiempo">¿Tiempo de preparación estimado?</label>
+                <input name="tiempo" id="id_tiempo" type="time">
     
-                <label for="categoria">Categoría</label>
-                <input type="text" name="categoria" id="categoria">
+                <label for="id_categoria">Categoría</label>
+                <input type="text" name="categoria" id="id_categoria">
     
-                <Label for="preparación">Instrucciones de preparación</Label>
-                <textarea name="preparación" id="preparacion"></textarea>
+                <label for="id_preparacion">Instrucciones de preparación</label>
+                <textarea name="preparacion" id="id_preparacion"></textarea>
     
                 <button class="btn_form" type="submit">Guardar receta</button>
             </form>
