@@ -36,14 +36,22 @@
         <div class="form_container_bg">
             <h2 class="form_title">¿Idea de receta nueva?</h2>
             <form class="form_container" action="#">
-                <label for="nombre">Nombre</label>
-                <input name="nombre" id="nombre" type="text">
+                <label for="titulo">Titulo</label>
+                <input name="titulo" id="titulo" type="text">
     
                 <label for="origen">País de origen</label>
                 <input name="origen" id="origen"  type="text">
     
                 <label for="ingredientes">Ingredientes</label>
-                <textarea name="ingredientes" id="ingredientes"></textarea>
+                <div class="ingredientes_container_input">
+                    <input type="text" id="ingredientes" name="ingredientes">
+                    <button type="button" class="btn_ingrediente">Añadir +</button>
+                </div>
+                <div class="ingredientes_container_list">
+                    <ul class="list_ingr">
+
+                    </ul>
+                </div>
     
                 <label for="tiempo">¿Tiempo de preparación estimado?</label>
                 <input name="tiempo" id="tiempo" type="time">
@@ -52,13 +60,14 @@
                 <input type="text" name="categoria" id="categoria">
     
                 <Label for="preparación">Instrucciones de preparación</Label>
-                <textarea name="preparación" id="preparación"></textarea>
+                <textarea name="preparación" id="preparacion"></textarea>
     
                 <button class="btn_form" type="submit">Guardar receta</button>
             </form>
         </div>
 
         <section class="card_container">
+            
 
         </section>
     </main>
