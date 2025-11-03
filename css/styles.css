@@ -161,20 +161,25 @@ body {
   font-size: .8rem;
 }
 
-.ingredientes_container_list {
+.card_lista_ingredientes {
   width: 100%;
-  max-height: 75px; /* puedes ajustar */
+  max-height: 75px;
   overflow-y: auto;
   padding: 0.5rem;
-  border: 2px solid #c9c1c1;
-  background-color: white;
+  margin-bottom: 10px;
 }
 
 .list_ingr {
+  overflow-y: auto;
+  background-color: white;
+  border: 2px solid #c4c2c2;
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
   list-style: none;
+  min-height: 30px;
+  max-height: 75px;
+  margin-bottom: 7px;
 }
 
 .list_ingr li::before{
@@ -206,10 +211,112 @@ body {
   margin-top: 20px;
 }
 
-.card {
-  background-color: green; /* para que la card sea visible */
-  padding: 1rem;
-  border: 1px solid orange;
+.card_container h3{
+  color: #0d470a;
+  margin-bottom: 20px;
 }
+
+.card_container h3::after{
+  content: "🍽️";
+}
+
+.card_container p,
+.card_container li {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+
+
+.card_wrapper{
+  padding: 40px;
+  width: 100%;
+  min-height: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.card_wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.card_wrapper.chile { 
+  background-image: url(../assets/img/chile/bg_chile.jpg); 
+  background-repeat:  no-repeat; 
+  background-position: right;
+  padding: 2rem; 
+  border-radius: 10px;
+}
+
+.card_wrapper.chile .card_pais::after{
+  content: url(../assets/img/chile/chile.png);
+}
+
+
+.card_wrapper.peru {
+   background-image: url(../assets/img/peru/bg_peru.jpg);
+   background-repeat: no-repeat;
+   padding: 2rem; 
+   border-radius: 10px; 
+  }
+
+.card_wrapper.espana {
+   background-image: url(../assets/img/espana/bg_espana.jpg); 
+   background-repeat: no-repeat; 
+   background-size: cover;
+   padding: 2rem; 
+   border-radius: 10px; 
+  }
+
+.card_wrapper.italia {
+   background-image: url(../assets/img/italia/bg_italia.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding: 2rem; 
+   border-radius: 10px; 
+  }
+
+.card_wrapper.argentina {
+   background-image: url(../assets/img/argentina/bg_argentina.jpg); 
+   background-repeat: no-repeat;
+   padding: 2rem; 
+   border-radius: 10px; 
+  }
+
+.card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.card p{
+  margin-bottom: 5px;
+}
+
+.card_buttons{
+  height: 30px;
+  width: 180px;
+  left: 30%;
+  margin: -13px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_buttons button{
+  padding: 5px;
+  background-color: yellowgreen;
+  border-radius: 5px;
+  border: none;
+  font-size: .9rem;
+  width: 80px;
+}
+
+.card_buttons button:hover{
+  cursor: pointer;
+  background-color: rgb(178, 240, 54);
+}
+
+
 
 
