@@ -1,20 +1,36 @@
+// 🔹 Mostrar u ocultar mensaje si hay recetas o no
+function actualizarMensaje() {
+  const recetas = JSON.parse(localStorage.getItem("recetas")) || [];
+  const msj_sinReceta = document.querySelector(".msj_sinReceta");
 
+  if (recetas.length > 0) {
+    msj_sinReceta.style.display = 'none';
+  } else {
+    msj_sinReceta.style.display = 'block';
+  }
+}
 
+// 🔹 Crear tarjeta
 function crearTarjeta(receta) {
   const card_container = document.querySelector(".card_container");
 
-  //Contenedor principal de la tarjeta
+  // Contenedor principal de la tarjeta
   const divContenedor = document.createElement("div");
   divContenedor.classList.add("card_wrapper");
 
-  // Clase según el país
-  if (receta.pais === "Chile") divContenedor.classList.add("chile");
-  if (receta.pais === "Perú") divContenedor.classList.add("peru");
-  if (receta.pais === "Argentina") divContenedor.classList.add("argentina");
-  if (receta.pais === "Italia") divContenedor.classList.add("italia");
-  if (receta.pais === "España") divContenedor.classList.add("espana");
+  // 🔹 Clase según el país (sin importar mayúsculas ni tildes)
+  const pais = receta.pais
+    .toLowerCase()
+    .normalize("NFD") // separa tildes
+    .replace(/[\u0300-\u036f]/g, ""); // las elimina
 
-  //Tarjeta interna
+  if (pais === "chile") divContenedor.classList.add("chile");
+  if (pais === "peru") divContenedor.classList.add("peru");
+  if (pais === "argentina") divContenedor.classList.add("argentina");
+  if (pais === "italia") divContenedor.classList.add("italia");
+  if (pais === "espana") divContenedor.classList.add("espana");
+
+  // Tarjeta interna
   const innerCard = document.createElement("div");
   innerCard.classList.add("card");
 
@@ -57,7 +73,15 @@ function crearTarjeta(receta) {
   p_preparacion.innerHTML = "<strong>Preparación:</strong> " + receta.preparacion;
 
   // Agregar todo a la tarjeta
-  innerCard.append(h3_title, p_pais, p_ingrediente, list_ingredientes, p_tiempo, p_categoria, p_preparacion);
+  innerCard.append(
+    h3_title,
+    p_pais,
+    p_ingrediente,
+    list_ingredientes,
+    p_tiempo,
+    p_categoria,
+    p_preparacion
+  );
 
   // Botones
   const btnContainer = document.createElement("div");
@@ -78,14 +102,16 @@ function crearTarjeta(receta) {
   card_container.appendChild(divContenedor);
 }
 
-//Cuando cargue la página
+// 🔹 Cuando cargue la página
 document.addEventListener("DOMContentLoaded", function() {
   const card_container = document.querySelector(".card_container");
-
   const recetasGuardadas = JSON.parse(localStorage.getItem("recetas")) || [];
+
   for (let i = 0; i < recetasGuardadas.length; i++) {
     crearTarjeta(recetasGuardadas[i]);
   }
+
+  actualizarMensaje();
 
   const btn_nav = document.querySelector(".header_btn");
   const nav_list = document.querySelector(".header_nav_list");
@@ -104,13 +130,13 @@ document.addEventListener("DOMContentLoaded", function() {
   let tarjetaEnEdicion = null;
   const ingredientesList = [];
 
-  //Menú hamburguesa
+  // 🔹 Menú hamburguesa
   btn_nav.addEventListener("click", function() {
     nav_list.classList.toggle("active");
     btn_nav.classList.toggle("active");
   });
 
-  // Botón para agregar ingrediente
+  // 🔹 Botón para agregar ingrediente
   btn_ingrediente.addEventListener("click", function(e) {
     e.preventDefault();
     const texto = inputIngredientes.value;
@@ -123,11 +149,11 @@ document.addEventListener("DOMContentLoaded", function() {
     inputIngredientes.value = "";
   });
 
-  //Editar o eliminar tarjeta
+  // 🔹 Editar o eliminar tarjeta
   card_container.addEventListener("click", function(e) {
     const elemento = e.target;
 
-    //Editar
+    // Editar
     if (elemento.classList.contains("btn_edit")) {
       tarjetaEnEdicion = elemento.closest(".card_wrapper");
       const inner = tarjetaEnEdicion.querySelector(".card");
@@ -153,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function() {
       form.querySelector("button[type='submit']").textContent = "Actualizar receta";
     }
 
-    //Eliminar
+    // Eliminar
     if (elemento.classList.contains("btn_delete")) {
       const tarjeta = elemento.closest(".card_wrapper");
       tarjeta.remove();
@@ -169,42 +195,43 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       localStorage.setItem("recetas", JSON.stringify(nuevasRecetas));
+      actualizarMensaje();
     }
   });
 
-  //Crear o actualizar receta
+  // 🔹 Crear o actualizar receta
   form.addEventListener("submit", function(e) {
     e.preventDefault();
 
     // Validaciones
     if (inputTitulo.value.trim() === "") {
-        alert("Por favor ingresa un título para la receta");
-        return;
+      alert("Por favor ingresa un título para la receta");
+      return;
     }
 
     if (inputOrigen.value === "") {
-        alert("Ingresa un país de origen");
-        return;
+      alert("Ingresa un país de origen");
+      return;
     }
 
     if (ingredientesList.length === 0) {
-        alert("Agrega al menos un ingrediente");
-        return;
+      alert("Agrega al menos un ingrediente");
+      return;
     }
 
     if (inputTiempo.value.trim() === "") {
-        alert("Indica el tiempo de preparación");
-        return;
+      alert("Indica el tiempo de preparación");
+      return;
     }
 
     if (inputCategoria.value === "") {
-        alert("Ingresa una categoría");
-        return;
+      alert("Ingresa una categoría");
+      return;
     }
 
     if (inputPreparacion.value.trim() === "") {
-        alert("Describe los pasos de preparación");
-        return;
+      alert("Describe los pasos de preparación");
+      return;
     }
 
     const receta = {
@@ -217,9 +244,8 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     if (tarjetaEnEdicion) {
-      //Actualizar tarjeta
+      // Actualizar tarjeta
       const inner = tarjetaEnEdicion.querySelector(".card");
-
       const tituloOriginal = inner.querySelector(".card_title").textContent;
 
       // Actualizar la tarjeta del DOM
@@ -249,15 +275,16 @@ document.addEventListener("DOMContentLoaded", function() {
       tarjetaEnEdicion = null;
       form.querySelector("button[type='submit']").textContent = "Crear receta";
     } else {
-      //Crear nueva tarjeta
+      // Crear nueva tarjeta
       crearTarjeta(receta);
+      actualizarMensaje();
 
       const arrRecetas = JSON.parse(localStorage.getItem("recetas")) || [];
       arrRecetas.push(receta);
       localStorage.setItem("recetas", JSON.stringify(arrRecetas));
     }
 
-    // Limpiar el formulario
+    // Limpiar formulario
     form.reset();
     ul_ingredientes.innerHTML = "";
     ingredientesList.length = 0;

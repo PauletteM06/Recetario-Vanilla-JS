@@ -26,23 +26,11 @@ body {
   padding: 2px;
 }
 
-.header_nav_containerLogo {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.8rem;
-}
-
-.header_nav_containerLogo img {
-  width: 25px;
-  height: 25px;
-}
-
-.header_nav_list{
+.header_nav_list {
   display: none;
 }
 
-.header_nav_list a:hover{
+.header_nav_list a:hover {
   cursor: pointer;
   color: yellowgreen;
 }
@@ -51,7 +39,7 @@ body {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top:0;
+  top: 0;
   right: 0;
   bottom: 0;
   padding: 80px;
@@ -62,9 +50,7 @@ body {
   box-shadow: 0 0 0 100vmax rgb(0, 0, 0, 0.5);
 }
 
-
-
-.header_btn.active{
+.header_btn.active {
   position: absolute;
   right: 100px;
   z-index: 1;
@@ -73,7 +59,6 @@ body {
 .header_btn img {
   width: 25px;
   height: 25px;
-  
 }
 
 .header_title {
@@ -117,9 +102,11 @@ body {
 
 .form_container_bg {
   border: 2px solid yellowgreen;
-  background: 
-    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
-    url(../assets/img/bg_form.jpg);  
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url(../assets/img/bg_form.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -127,7 +114,6 @@ body {
   width: 100%;
   border-radius: 20px;
 }
-
 
 .form_title {
   margin-bottom: 25px;
@@ -139,17 +125,16 @@ body {
   flex-direction: column;
 }
 
-.form_container label{
-    font-weight: bold;
+.form_container label {
+  font-weight: bold;
 }
-
 
 .form_container input,
 .form_container textarea {
   margin-bottom: 15px;
 }
 
-.btn_ingrediente{
+.btn_ingrediente {
   margin-left: 5px;
   margin-bottom: 5px;
   padding: 3px;
@@ -157,7 +142,7 @@ body {
   background-color: yellowgreen;
   border: none;
   cursor: pointer;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .card_lista_ingredientes {
@@ -181,24 +166,25 @@ body {
   margin-bottom: 7px;
 }
 
-.list_ingr li::before{
+.list_ingr li::before {
   content: "-";
   gap: 3px;
 }
 
-.btn_form{
-    width: 200px;
-    margin: 0 auto;
-    height: 30px;
-    background-color: yellowgreen;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
+.btn_form {
+  width: 200px;
+  margin: 0 auto;
+  height: 30px;
+  background-color: yellowgreen;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.btn_form:hover, .btn_ingrediente:hover{
-    background-color: rgb(178, 240, 54);
+.btn_form:hover,
+.btn_ingrediente:hover {
+  background-color: rgb(178, 240, 54);
 }
 
 .card_container {
@@ -209,12 +195,12 @@ body {
   margin-top: 20px;
 }
 
-.card_container h3{
+.card_container h3 {
   color: #0d470a;
   margin-bottom: 20px;
 }
 
-.card_container h3::after{
+.card_container h3::after {
   content: "🍽️";
 }
 
@@ -225,9 +211,7 @@ body {
   line-height: 1.5;
 }
 
-
-
-.card_wrapper{
+.card_wrapper {
   padding: 40px;
   width: 100%;
   min-height: 250px;
@@ -239,48 +223,49 @@ body {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
-.card_wrapper.chile { 
-  background-image: url(../assets/img/chile/bg_chile.jpg); 
-  background-repeat:  no-repeat; 
+.card_wrapper.chile {
+  background-image: url(../assets/img/chile/bg_chile.jpg);
+  background-repeat: no-repeat;
   background-position: right;
-  padding: 2rem; 
+  padding: 2rem;
   border-radius: 10px;
 }
 
-.card_wrapper.chile .card_pais::after{
+.card_wrapper.chile .card_pais::after {
   content: url(../assets/img/chile/chile.png);
 }
 
-
 .card_wrapper.peru {
-   background-image: url(../assets/img/peru/bg_peru.jpg);
-   background-repeat: no-repeat;
-   padding: 2rem; 
-   border-radius: 10px; 
-  }
+  background-image: url(../assets/img/peru/bg_peru.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  border-radius: 10px;
+}
 
 .card_wrapper.espana {
-   background-image: url(../assets/img/espana/bg_espana.jpg); 
-   background-repeat: no-repeat; 
-   background-size: cover;
-   padding: 2rem; 
-   border-radius: 10px; 
-  }
+  background-image: url(../assets/img/espana/bg_espana.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem;
+  border-radius: 10px;
+}
 
 .card_wrapper.italia {
-   background-image: url(../assets/img/italia/bg_italia.jpg);
-   background-repeat: no-repeat;
-   background-size: cover;
-   padding: 2rem; 
-   border-radius: 10px; 
-  }
+  background-image: url(../assets/img/italia/bg_italia.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem;
+  border-radius: 10px;
+}
 
 .card_wrapper.argentina {
-   background-image: url(../assets/img/argentina/bg_argentina.jpg); 
-   background-repeat: no-repeat;
-   padding: 2rem; 
-   border-radius: 10px; 
-  }
+  background-image: url(../assets/img/argentina/bg_argentina.jpg);
+  background-repeat: no-repeat;
+  padding: 2rem;
+  border-radius: 10px;
+}
 
 .card {
   background-color: white;
@@ -288,11 +273,11 @@ body {
   border-radius: 8px;
 }
 
-.card p{
+.card p {
   margin-bottom: 5px;
 }
 
-.card_buttons{
+.card_buttons {
   height: 30px;
   width: 180px;
   left: 30%;
@@ -301,30 +286,30 @@ body {
   justify-content: space-between;
 }
 
-.card_buttons button{
+.card_buttons button {
   padding: 5px;
   background-color: yellowgreen;
   border-radius: 5px;
   border: none;
-  font-size: .9rem;
+  font-size: 0.9rem;
   width: 80px;
 }
 
-.card_buttons button:hover{
+.card_buttons button:hover {
   cursor: pointer;
   background-color: rgb(178, 240, 54);
 }
 
-.msj_sinReceta{
+.msj_sinReceta {
   display: block;
   margin-top: 20px;
   padding: 15px;
-  background-color:#929016e6;
+  background-color: #929016e6;
   border-radius: 20px;
   color: #fffafa;
 }
 
-.footer{
+.footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -338,12 +323,130 @@ body {
   margin-top: 20px;
 }
 
-.footer > p > a{
+.footer > p > a {
   text-decoration: none;
   color: black;
 }
 
-.footer >p >a:hover{
-  color:#0d470a;
+.footer > p > a:hover {
+  color: #0d470a;
 }
+
+@media (min-width: 1200px) {
+  .header {
+    position: relative;
+    background-size: 80vw;
+    width: 100vw;
+    height: 77vh;
+    box-shadow: rgb(0, 0, 0, 2);
+  }
+
+  .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+
+  .header * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo {
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+  }
+
+  .header_nav button {
+    display: none;
+  }
+
+  .header_nav_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+  }
+
+  .header_nav_list li:first-child {
+    color: #0d470a;
+    font-weight: bold;
+  }
+
+  .header_title {
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+  }
+
+  .header_searcher {
+    width: 560px;
+    height: 40px;
+    margin: 142px auto;
+    background-color: yellowgreen;
+    padding: 6px;
+  }
+
+  .header_searcher input {
+    border-radius: 5px;
+    border: none;
+    }
+
+  .header_searcher_icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 430px;
+  padding: 10px;
+  }
+
+  .form_container_bg {
+    border: 2px solid yellowgreen;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0.6)
+      ),
+      url(../assets/img/bg_form.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .form_title {
+    margin-bottom: 25px;
+    color: #0d470a;
+  }
+
+  .form_container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form_container label {
+    font-weight: bold;
+  }
+
+  .form_container input,
+  .form_container textarea {
+    margin-bottom: 15px;
+  }
+}
+
+
 
