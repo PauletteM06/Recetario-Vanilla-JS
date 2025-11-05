@@ -7,7 +7,6 @@
 
 body {
   font-family: "Inter", sans-serif;
-  width: 450px;
   position: relative;
 }
 
@@ -24,6 +23,11 @@ body {
   justify-content: space-around;
   background-color: #dbdbdb;
   padding: 2px;
+}
+
+.logo{
+  width: 30px;
+  height: 30px;
 }
 
 .header_nav_list {
@@ -227,6 +231,7 @@ body {
   background-image: url(../assets/img/chile/bg_chile.jpg);
   background-repeat: no-repeat;
   background-position: right;
+  background-size: cover;
   padding: 2rem;
   border-radius: 10px;
 }
@@ -263,6 +268,7 @@ body {
 .card_wrapper.argentina {
   background-image: url(../assets/img/argentina/bg_argentina.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
   padding: 2rem;
   border-radius: 10px;
 }
@@ -333,12 +339,17 @@ body {
 }
 
 @media (min-width: 1200px) {
+
+  body{
+    width: 100%;
+
+  }
+
   .header {
     position: relative;
-    background-size: 80vw;
-    width: 100vw;
+    background-size: cover;
     height: 77vh;
-    box-shadow: rgb(0, 0, 0, 2);
+
   }
 
   .header::before {
@@ -404,38 +415,38 @@ body {
     height: 25px;
   }
 
-  .main {
-    border: 2px solid black;
-    display: flex;
-    flex-direction: row;
-    width: 1000px;
-    gap: 40px;
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+  margin: 50px auto;
+  max-width: 1300px;
+  width: 90%;
+}
+
+
+  .form_container_bg{
+    width: 400px;
   }
 
-  .form_container_bg {
-    margin-top: 0;
-    width: 50%;
-    border-radius: 20px;
+  .container_recetas{
+    width: 750px;
   }
 
-  .form_title {
-    margin-bottom: 25px;
-    color: #0d470a;
+  .card_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
   }
 
-  .form_container {
-    display: flex;
-    flex-direction: column;
-  }
 
-  .form_container label {
-    font-weight: bold;
-  }
 
-  .form_container input,
-  .form_container textarea {
-    margin-bottom: 15px;
-  }
+ 
+
+
+
+ 
 }
 
 
